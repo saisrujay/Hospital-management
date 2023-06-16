@@ -1,8 +1,8 @@
 
 function Register() {
     return (
-        <div>
-            
-        </div>
+        <nav>
+
+        </nav>
     )
 }
