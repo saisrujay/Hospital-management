@@ -20,7 +20,7 @@ const userSchema = mongo.Schema(
             required: true,
             unique: true
           },
-          upid: {
+          opid: {
             type: String,
             required: true,
             unique: true
