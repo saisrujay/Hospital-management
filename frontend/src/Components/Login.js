@@ -1,28 +1,22 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
+import axios from "axios";
 
 function Login() {
   const [name, setName] = useState("");
   const [uhid, setUhid] = useState("");
+  const [userDetails, setUserDetails] = useState(null);
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    // Send login request to backend API
-    const response = await fetch("/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, uhid }),
-    });
-
-    if (response.ok) {
-      const user = await response.json();
-      // Handle successful login, e.g., set user in state or redirect to another page
+    try {
+      const response = await axios.post("http://localhost:5000/api/users/login" , { name, uhid })
+      const user = response.data;
+      setUserDetails(user);
       console.log("User details:", user);
-    } else {
-      // Handle login failure, e.g., display error message
-      console.error("Login failed");
+    } catch (error) {
+      console.error("Login failed:", error);
     }
   };
 
@@ -44,6 +38,20 @@ function Login() {
         />
         <button type="submit">Login</button>
       </form>
+      <button>
+        <Link to="/">Home</Link>
+      </button>
+
+      {userDetails && (
+        <div>
+          <h2>User Details:</h2>
+          <p>Name: {userDetails.name}</p>
+          <p>Age: {userDetails.age}</p>
+          <p>Gender: {userDetails.gender}</p>
+          <p>UHID: {userDetails.uhid}</p>
+          <p>OPID: {userDetails.opid}</p>
+        </div>
+      )}
     </div>
   );
 }
