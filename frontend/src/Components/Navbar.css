@@ -1,0 +1,14 @@
+nav {
+    justify-content: left;
+    display: flex;
+    padding: 2% 2%;
+    margin-bottom: 10px;
+    box-shadow: 0px 2.98256px 7.5464px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    margin: 0;
+    height: 50px;
+    margin-right: 2%;
+}

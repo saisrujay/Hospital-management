@@ -1,8 +1,12 @@
+import './Home.css'
 
-function Register() {
+export default function Register() {
     return (
-        <nav>
-
-        </nav>
+        <div className='home'>
+            <div className="button">
+                <button className="b1"> Existing User </button>
+                <button className="b1">New User</button>
+            </div>
+        </div>
     )
 }
