@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [uhid, setUhid] = useState("");
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -13,7 +13,7 @@ function Login() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ name, uhid }),
     });
 
     if (response.ok) {
@@ -32,15 +32,15 @@ function Login() {
       <form onSubmit={handleLogin}>
         <input
           type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
         <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          type="text"
+          placeholder="UHID"
+          value={uhid}
+          onChange={(e) => setUhid(e.target.value)}
         />
         <button type="submit">Login</button>
       </form>

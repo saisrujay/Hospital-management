@@ -1,7 +1,7 @@
 import Logo from "../Images/Logo.webp"
 import './Navbar.css'
 
-export default function Register() {
+export default function NavBar() {
     return (
         <nav className='nav'>
             <img className='logo' src={Logo} alt="Airbnb Logo" />
