@@ -1,5 +1,5 @@
 nav {
-    justify-content: left;
+    justify-content: center;
     display: flex;
     padding: 2% 2%;
     margin-bottom: 10px;
@@ -8,7 +8,7 @@ nav {
 
 .logo {
     display: flex;
-    margin: 0;
+    margin: 0px;
     height: 50px;
     margin-right: 2%;
 }
